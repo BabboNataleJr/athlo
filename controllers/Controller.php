@@ -1,6 +1,6 @@
 <?php 
 
-include_once __DIR__ . '/../private/config/DatabaseConnection.php';
+include_once __DIR__ . '/../config/DatabaseConnection.php';
 
 class Controller
 {
