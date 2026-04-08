@@ -1,5 +1,5 @@
 # Athlo
-## Athlo is a platform where athletes share and discover training ideas. Explore drills from the community and build your own workout in minutes. Get inspired, stay creative, and train smarter—no need to start from scratch.
+### Athlo is a platform where athletes share and discover training ideas. Explore drills from the community and build your own workout in minutes. Get inspired, stay creative, and train smarter—no need to start from scratch.
 
 Athlo is a dynamic platform where athletes come together to share, discover, and elevate their training. It’s more than just a collection of exercises — it’s a living ecosystem of ideas, built by athletes for athletes.
 
