@@ -1,7 +1,5 @@
 <?php
 
-// include_once '/../config/DatabaseConnection.php';
-
 include_once __DIR__ . '/../core/Router.php';
 
 $router = new Router();
