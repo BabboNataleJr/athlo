@@ -36,7 +36,7 @@ class Router {
         $controller = $routes[$this->route][$this->method]['controller'];
         $action = $routes[$this->route][$this->method]['action'];
 
-        $page = $controller->action();
+        $page = $controller->$action();
 
         $title = $page['title'];
 
@@ -49,7 +49,7 @@ class Router {
             $output = $this->view->render($page['template']);
         }
 
-        include __DIR__ . '/../views/layout.php';
+        include __DIR__ . '/../views/layout.html.php';
     }
 
 }

@@ -8,7 +8,15 @@ class Controller
         // Constructor logic here
     }
 
-    public function handleRequest($request) {
+    public function handleRequest() {
         // Handle the request and return a response
+        $page = [
+            'title' => 'Home Page',
+            'template' => 'home.html',
+            'variables' => [
+                'message' => 'Welcome to Athlo!',
+            ],
+        ];
+        return $page;
     }
 }

@@ -12,7 +12,9 @@ $view = new View();
 
 $router = new Router($route, $method, $routes, $view);
 
-echo "Received request: " . $route . " with method: " . $method . "\n";
+$router->run();
+
+// echo "Received request: " . $route . " with method: " . $method . "\n";
 
 // $router->route($route);
 
