@@ -4,6 +4,11 @@ include_once __DIR__ . '/../controllers/Controller.php';
 
 class Router {
 
+    private $route;
+    private $method;
+    private $routes;
+    private $view;
+
     public function __construct($route, $method, $routes, $view) {
         // Constructor logic here
         $this->route = $route;
