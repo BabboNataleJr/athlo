@@ -14,10 +14,4 @@ $router = new Router($route, $method, $routes, $view);
 
 $router->run();
 
-// echo "Received request: " . $route . " with method: " . $method . "\n";
-
-// $router->route($route);
-
-
-
 ?>

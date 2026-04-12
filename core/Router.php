@@ -31,9 +31,11 @@ class Router {
 
     public function run()
     {
+        include __DIR__. "/../controllers/Controller.php";
+
         $routes = $this->routes->getRoutes();
 
-        $controller = $routes[$this->route][$this->method]['controller'];
+        $controller = new $routes[$this->route][$this->method]['controller'];
         $action = $routes[$this->route][$this->method]['action'];
 
         $page = $controller->$action();

@@ -12,7 +12,7 @@ class ARoutes
         return [
             '/' => [
                 'GET' => [
-                    'controller' => new Controller(),
+                    'controller' => 'Controller',
                     'action' => 'handleRequest',
                 ],
                 'POST' => [
