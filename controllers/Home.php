@@ -19,12 +19,15 @@ class Home extends Controller
 
     public function handleGetRequest()
     {
+        // retrieve all the exercises list
+
         // Handle the request and return a response
         $page = [
             'title' => 'Home Page',
             'template' => 'home.html',
             'variables' => [
                 'message' => 'Welcome to Athlo!',
+                'exercises' => $exercises ?? [],
             ],
         ];
         return $page;

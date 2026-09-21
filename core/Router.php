@@ -12,7 +12,8 @@ class Router {
     private $routes;
     private $view;
 
-    public function __construct($route, $method, $routes, $view) {
+    public function __construct($route, $method, $routes, $view) 
+    {
         // Constructor logic here
         $this->route = $route;
         $this->method = $method;
@@ -23,13 +24,13 @@ class Router {
     public function route($request) 
     {
         // Routing logic here
-        $routes = [
-            '/' => 'HomeController',
-            '/about' => 'AboutController',
-            // Add more routes as needed
-        ];
+        // $routes = [
+        //     '/' => 'HomeController',
+        //     '/about' => 'AboutController',
+        //     // Add more routes as needed
+        // ];
 
-        echo "Routing request: " . $request . "\n";
+        // echo "Routing request: " . $request . "\n";
     }
 
     public function run()
