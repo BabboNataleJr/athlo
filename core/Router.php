@@ -1,6 +1,9 @@
 <?php 
 
 include_once __DIR__ . '/../controllers/Controller.php';
+include_once __DIR__ . '/../controllers/Home.php';
+include_once __DIR__ . '/../controllers/About.php';
+include_once __DIR__ . '/../controllers/Exercise.php';
 
 class Router {
 
@@ -31,8 +34,6 @@ class Router {
 
     public function run()
     {
-        include __DIR__. "/../controllers/Controller.php";
-
         $routes = $this->routes->getRoutes();
 
         $controller = new $routes[$this->route][$this->method]['controller'];
