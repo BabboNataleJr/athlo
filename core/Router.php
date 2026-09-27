@@ -4,6 +4,8 @@ include_once __DIR__ . '/../controllers/Controller.php';
 include_once __DIR__ . '/../controllers/Home.php';
 include_once __DIR__ . '/../controllers/About.php';
 include_once __DIR__ . '/../controllers/Exercise.php';
+include_once __DIR__ . '/../controllers/Add.php';
+
 
 class Router {
 
@@ -12,13 +14,16 @@ class Router {
     private $routes;
     private $view;
 
-    public function __construct($route, $method, $routes, $view) 
+    private $pdo;
+
+    public function __construct($route, $method, $routes, $view, $pdo) 
     {
         // Constructor logic here
         $this->route = $route;
         $this->method = $method;
         $this->routes = $routes;
         $this->view = $view;
+        $this->pdo = $pdo;
     }
 
     public function route($request) 
@@ -37,7 +42,7 @@ class Router {
     {
         $routes = $this->routes->getRoutes();
 
-        $controller = new $routes[$this->route][$this->method]['controller'];
+        $controller = new $routes[$this->route][$this->method]['controller']($this->pdo);
         $action = $routes[$this->route][$this->method]['action'];
 
         $page = $controller->$action();

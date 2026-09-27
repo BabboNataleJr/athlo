@@ -1,0 +1,48 @@
+/* Card principale */
+    .ghibli-exercise-card {
+        background-color: #fcfbf7; /* Un colore carta/avorio molto caldo */
+        border: 2px solid #e8e4d9; /* Bordo sottile e morbido */
+        border-radius: 16px; /* Angoli molto arrotondati per un look accogliente */
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04); /* Ombra leggera e soffusa */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        max-width: 400px;
+        margin: 20px auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Effetto al passaggio del mouse (leggero sollevamento) */
+    .ghibli-exercise-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Sezione Immagine */
+    .ghibli-exercise__media img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        border-bottom: 2px solid #e8e4d9;
+    }
+
+    /* Contenuto testuale */
+    .ghibli-exercise__content {
+        padding: 24px;
+    }
+
+    /* Titolo */
+    .ghibli-exercise__title {
+        font-size: 1.25rem;
+        color: #2c3531; /* Un verde scuro/ardesia ispirato ai boschi */
+        margin: 0 0 12px 0;
+        font-weight: 700;
+    }
+
+    /* Descrizione */
+    .ghibli-exercise__desc {
+        font-size: 0.95rem;
+        color: #5d6561; /* Grigio-verde leggibile e rilassante */
+        line-height: 1.6;
+        margin: 0;
+    }

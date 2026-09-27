@@ -36,6 +36,16 @@ class ARoutes
                     'action' => 'handleGetRequest',
                 ],
             ],
+            '/add' => [
+                'GET' => [
+                    'controller' => 'Add',
+                    'action' => 'handleGetRequest',
+                ],
+                'POST' => [
+                    'controller' => 'Add',
+                    'action' => 'handlePostRequest',
+                ],
+            ],
         ];
     }
 }
