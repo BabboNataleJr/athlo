@@ -29,9 +29,8 @@ class Add extends Controller
 
     public function handlePostRequest()
     {
-        // if(isset($_POST['name']) && !empty($_POST['name']))
-        // {
-        // }
+        // validation and sanitization of the input data
+        // TODO
 
         $name = $_POST['name'] ?: 'N/A';
         $descrizione = $_POST['descrizione'] ?: 'N/A';
