@@ -25,10 +25,12 @@
         <p class="ghibli-exercise__desc"><?php echo nl2br(htmlspecialchars($exercise['descrizione'], ENT_QUOTES, 'UTF-8')); ?></p>
     </div>
     <div class="ghibli-exercise__remove">
-        <a href="/remove/<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">Delete it</a>
+        <form method="POST" action="/exercise/remove/<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">
+            <button type="submit">Delete it</button>
+        </form>
     </div>
     <div class="ghibli-exercise__modify">
-        <a href="/modify/<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">Modify it</a>
+        <a href="/exercise/modify/<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">Modify it</a>
     </div>
 </div>
 

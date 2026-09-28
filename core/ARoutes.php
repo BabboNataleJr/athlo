@@ -36,6 +36,42 @@ class ARoutes
                     'action' => 'handleGetRequest',
                 ],
             ],
+            '/exercise/create' => [
+                'GET' => [
+                    'controller' => 'Exercise',
+                    'action' => 'handleShowCreateForm',
+                ],
+                'POST' => [
+                    'controller' => 'Exercise',
+                    'action' => 'handleCreateExercise',
+                ],
+            ],
+            '/exercise/{id}' => [
+                'GET' => [
+                    'controller' => 'Exercise',
+                    'action' => 'handleShowExercise',
+                ],
+                'POST' => [
+                    'controller' => 'Exercise',
+                    'action' => 'handleUpdateExercise',
+                ],
+            ],
+            '/exercise/{id}/delete' => [
+                'POST' => [
+                    'controller' => 'Exercise',
+                    'action' => 'handleRemoveExercise',
+                ],
+            ],
+            '/exercise/{id}/edit' => [
+                'GET' => [
+                    'controller' => 'Exercise',
+                    'action' => 'handleEditExercise',
+                ],
+                'POST' => [
+                    'controller' => 'Exercise',
+                    'action' => 'handleUpdateExercise',
+                ],
+            ],
             '/add' => [
                 'GET' => [
                     'controller' => 'Add',
@@ -46,6 +82,7 @@ class ARoutes
                     'action' => 'handlePostRequest',
                 ],
             ],
+
         ];
     }
 }
