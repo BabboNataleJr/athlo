@@ -16,14 +16,13 @@ class Router {
 
     private $pdo;
 
-    public function __construct($route, $method, $routes, $view, $pdo) 
+    public function __construct($route, $method, $routes, $view) 
     {
         // Constructor logic here
         $this->route = $route;
         $this->method = $method;
         $this->routes = $routes;
         $this->view = $view;
-        $this->pdo = $pdo;
     }
 
     public function route($request) 
@@ -42,7 +41,7 @@ class Router {
     {
         $routes = $this->routes->getRoutes();
 
-        $controller = new $routes[$this->route][$this->method]['controller']($this->pdo);
+        $controller = new $routes[$this->route][$this->method]['controller']();
         $action = $routes[$this->route][$this->method]['action'];
 
         $page = $controller->$action();

@@ -5,7 +5,7 @@
     <label for="name">Name of the exercise: </label>
     <input type="text" name="exercise[name]" id="name" placeholder="Title"/>
 
-    <label for="descrizione">What the exercise constitute of: </label>
+    <label for="descrizione">What the exercise is constitute of: </label>
     <textarea id="descrizione" name="exercise[descrizione]" rows="5" cols="33" placeholder="A brief description for the exercise..."></textarea>
 
     <label for="immagine">Add an image for the exercise</label>

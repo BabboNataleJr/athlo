@@ -15,12 +15,47 @@ class Controller
 
     public function home()
     {
+        $exercises = $this->exercise->findAllExercises();
         // return the $page variable(s)
+        $page = [
+            'title' => 'Home Page',
+            'template' => 'home.html',
+            'variables' => [
+                // 'message' => 'Welcome to Athlo!',
+                'exercises' => $exercises ?? [],
+            ],
+        ];
+
+        return $page;
     }
 
-    public function listAllExercises()
+    public function listAllExercise()
     {
-        //
+        $exercises = $this->exercise->findAllExercises();
+
+        $page = [
+            'title' => 'All exercise',
+            'template' => 'exercises.html',
+            'variables' => [
+                'message' => '',
+                'exercises' => $exercises ?? [],
+            ],
+        ];
+
+        return $page;
+    }
+
+    public function about()
+    {
+        $page = [
+            'title' => 'About us',
+            'template' => 'about.html',
+            'variables' => [
+                'message' => 'Find more about us',
+            ],
+        ];
+
+        return $page;
     }
 
     public function edit()

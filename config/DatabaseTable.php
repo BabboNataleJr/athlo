@@ -8,7 +8,7 @@ class DatabaseTable
 
     private $primaryKey;
 
-    public function __constructor($pdo, $tableName, $primaryKey)
+    public function __construct($pdo, $tableName, $primaryKey)
     {
         $this->pdo = $pdo;
         $this->tableName = $tableName;
