@@ -25,18 +25,6 @@ class Router {
         $this->view = $view;
     }
 
-    public function route($request) 
-    {
-        // Routing logic here
-        // $routes = [
-        //     '/' => 'HomeController',
-        //     '/about' => 'AboutController',
-        //     // Add more routes as needed
-        // ];
-
-        // echo "Routing request: " . $request . "\n";
-    }
-
     public function run()
     {
         $routes = $this->routes->getRoutes();

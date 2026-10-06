@@ -41,4 +41,16 @@ class DatabaseTable
         $result = $this->query($q, $params);
         return $result->fetch();
     }
+
+    public function save($record)
+    {
+        try
+        {
+            $this->pdo->insert($record);
+        }
+        catch(Exception $e)
+        {
+            // silently ignore
+        }
+    }
 }

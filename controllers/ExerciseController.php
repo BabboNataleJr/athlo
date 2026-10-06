@@ -1,15 +1,15 @@
 <?php
 
-class Controller
+class ExerciseController
 {
 
     private $exercise;
 
-    private $author;
+    // private $author;
 
-    public function __construct($author, $exercise)
+    public function __construct($exercise)
     {
-        $this->author = $author;
+        // $this->author = $author ?? [];
         $this->exercise = $exercise;
     }
 
@@ -58,27 +58,31 @@ class Controller
         return $page;
     }
 
-    public function edit()
+    public function showEdit()
     {
-        // edit the exercise if POST or return the edit page if get
-        $http_metod = strtolower($_SERVER['REQUEST_METHOD'] ?? 'GET');
-
-        // update the existing exercise
-        if($http_metod == 'post')
+        if (isset($_GET['id']))
         {
-            // use the exercise data sent to update the one existent
-            if ($_POST['exercise'])
-            {
-                
-            }
-        }
-        elseif ($http_metod == 'get')
-        {
-            // return the page variables to show the edit template
-            if ($_GET['exerciseId'])
-            {
-
-            }
+            $exeId = $_GET['id'];
+            $exercise = $this->exercise->findByValue($exeId);
+            
+            $page = [
+                'title' => 'Edit the exercise',
+                'template' => 'edit.html',
+                'variables' => [
+                    'exercise' => $exercise,
+                ],
+            ];
         }
     }
+
+    public function saveEdit()
+    {
+        if (isset($_POST['exercise']))
+        {
+            $exercise = $_POST['exercise'];
+            // TODO: create the save method in Exercise
+            $this->exercise->save($exercise);
+        }
+    }
+       
 }

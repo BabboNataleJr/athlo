@@ -1,24 +1,13 @@
 <?php
 
-include_once __DIR__ . '/../core/Router.php';
-include_once __DIR__ . '/../core/ARoutes.php';
-include_once __DIR__ . '/../core/View.php';
-include_once __DIR__ . '/../core/Controller.php';
-include_once __DIR__ . '/../config/DatabaseConnection.php';
-include_once __DIR__ . '/../config/DatabaseTable.php';
+include_once __DIR__ . '/../core/AthloRoutes.php';
+// include_once __DIR__ . '/../core/View.php';
+include_once __DIR__ . '/../core/EntryPoint.php';
 
+$route = ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
 
-$pdo = DatabaseConnection::getConnection();
-
-$author = new DatabaseTable($pdo, 'author', 'id');
-$exercise = new DatabaseTable($pdo, 'exercise', 'id');
-
-$exeController = new Controller($author, $exercise);
-
-$route = $_SERVER['REQUEST_URI'];
-$method = $_SERVER['REQUEST_METHOD'];
-
-
+$entryPoint = new EntryPoint($route, new AthloRoutes(), $_SERVER['REQUEST_METHOD']);
+$entryPoint->run();
 
 // echo "Route: $route. Method: $method;";
 
