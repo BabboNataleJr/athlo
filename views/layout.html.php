@@ -13,7 +13,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li><a href="/exercises">Exercises</a></li>
+                <li><a href="/exercises/list">Exercises</a></li>
             </ul>
         </nav>
     </header>
