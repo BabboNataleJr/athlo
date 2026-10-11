@@ -1,4 +1,4 @@
-<form action="" method="post">
+<form action="edit" method="post">
     <div class="exercise-wrapper">
         <div class="exercise-title">
             <h4><?php echo htmlspecialchars($exercise['name'] ?? '', ENT_QUOTES, 'UTF-8'); ?></h4>
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <input type="hidden" name="exercise[id]">
+    <input type="hidden" name="exercise[id]" value="<?php echo htmlspecialchars($exercise['id'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
 
     <input type="submit" value="Salva"/> 
     <a href="/">Annulla</a>

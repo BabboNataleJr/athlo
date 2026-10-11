@@ -79,6 +79,7 @@ class ExerciseController
 
     public function saveEdit()
     {
+        exit(print_r($_REQUEST, true));
         if (isset($_POST['exercise']))
         {
             $exercise = $_POST['exercise'];
