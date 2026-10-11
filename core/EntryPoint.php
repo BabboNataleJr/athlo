@@ -38,7 +38,7 @@ class EntryPoint
         $controller = $all_routes[$this->route][$this->method]['controller'];
         $action = $all_routes[$this->route][$this->method]['action'];
 
-        $page = $controller->action();
+        $page = $controller->$action();
 
         $title = $page['title'];
 

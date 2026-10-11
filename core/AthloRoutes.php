@@ -11,15 +11,17 @@ class AthloRoutes
     {
         include_once __DIR__ . '/../config/DatabaseConnection.php';
         include_once __DIR__ . '/../config/DatabaseTable.php';
-        include_once __DIR__ . '/../core/ExerciseController.php';
+        include_once __DIR__ . '/../controllers/ExerciseController.php';
+
+        $pdo = DatabaseConnection::getConnection();
         
-        $exerciseTable = new DatabaseTable($pdo, 'exercise', 'id');
+        $exerciseTable = new DatabaseTable($pdo, 'esercizio', 'id');
         // $authorTable = new DatabaseTable($pdo, 'author', 'id');
 
         $exerciseController = new ExerciseController($exerciseTable);
 
         return [
-            '/' => [
+            '' => [
                 'GET' => [
                     'controller' => $exerciseController,
                     'action' => 'home',
@@ -37,7 +39,7 @@ class AthloRoutes
                     'action' => 'listAllExercises',
                 ],
             ],
-            'exercises/edit' => [
+            'exercise/edit' => [
                 'GET' => [
                     'controller' => $exerciseController,
                     'action' => 'showEdit',

@@ -1,5 +1,6 @@
 <?php
 
+// AthloRoutes si include come dipendenza di EntryPoint
 include_once __DIR__ . '/../core/AthloRoutes.php';
 include_once __DIR__ . '/../core/EntryPoint.php';
 

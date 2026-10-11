@@ -73,6 +73,8 @@ class ExerciseController
                 ],
             ];
         }
+
+        return $page;
     }
 
     public function saveEdit()

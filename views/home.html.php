@@ -32,7 +32,7 @@
         </form>
     </div>
     <div class="ghibli-exercise__modify">
-        <a href="/exercise/edit/<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">Edit</a>
+        <a href="/exercise/edit?id=<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">Edit</a>
     </div>
 </div>
 
