@@ -49,6 +49,16 @@ class AthloRoutes
                     'action' => 'saveEdit'
                 ],
             ],
+            'exercise/create' => [
+                'GET'=> [
+                    'controller' => $exerciseController,
+                    'action' => 'showCreate',
+                ],
+                'POST'=> [
+                    'controller' => $exerciseController,
+                    'action' => 'saveCreate',
+                ],
+            ]
         ];
     }
 }

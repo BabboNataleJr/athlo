@@ -29,7 +29,7 @@ class ExerciseController
         return $page;
     }
 
-    public function listAllExercise()
+    public function listAllExercises()
     {
         $exercises = $this->exercise->findAllExercises();
 
@@ -79,12 +79,57 @@ class ExerciseController
 
     public function saveEdit()
     {
-        exit(print_r($_REQUEST, true));
+        if (isset($_POST['exercise']))
+        {
+            $exercise_data = $_POST['exercise'];
+
+            // check if an exercise does really exists
+            $exercise = $this->exercise->findByValue($exercise_data['id']);
+
+            // if exists 
+            if ($exercise)
+            {
+                // update it
+                $this->exercise->update($exercise);
+            }
+            else
+            {
+                // otherwise save a new exercise(? to be thought on better)
+                $this->exercise->save($exercise);
+            }
+
+            header('Location: /');
+            exit;
+        }
+    }
+
+    public function showCreate()
+    {
+        $page = [
+            'title'=> 'Create a new Exercise',
+            'template' => 'create.html',
+            'variables' => [
+                'message'=> 'Create your new exercise to add to the list',
+            ],
+        ];
+
+        return $page;
+    }
+
+    public function saveCreate()
+    {
         if (isset($_POST['exercise']))
         {
             $exercise = $_POST['exercise'];
-            // TODO: create the save method in Exercise
-            $this->exercise->save($exercise);
+
+            // todo: check that everything is filled and ready/safe to be saved
+            if ($exercise)
+            {
+                $this->exercise->create($exercise);
+            }
+
+            header('Location: /');
+            exit;
         }
     }
        

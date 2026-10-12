@@ -42,15 +42,60 @@ class DatabaseTable
         return $result->fetch();
     }
 
+    public function insert($record)
+    {
+        $q = 'INSERT INTO `'. $this->tableName .'` (';
+
+        foreach($record as $key => $value)
+        {
+            $q .= '`'. $key .'`,';
+        }
+
+        $q = rtrim($q, ',');
+        $q .= ') VALUES (';
+
+        foreach($record as $key => $value)
+        {
+            $q .= ':'. $key .',';
+        }
+
+        $q = rtrim($q,',');
+        $q .= ')';
+
+        $this->query($q, $record);
+    }
+
     public function save($record)
     {
         try
         {
-            $this->pdo->insert($record);
+            $this->insert($record);
         }
         catch(Exception $e)
         {
             // silently ignore
         }
+    }
+
+    public function update(array $record)
+    {
+        // `name` = :name, `immagine` = :immagine, `descrizione` = :descrizione'
+        $q = 'UPDATE `' . $this->tableName . '` SET ';
+
+        foreach($record as $key => $value)
+        {
+            $q .= $key .'= :'. $key .',';
+        }
+
+        // remove the final comma
+        $q = rtrim($q, ',');
+
+        // complete the update query
+        $q .= ' WHERE `' . $this->primaryKey . '` = :primaryKey'; 
+
+        // set the primaryKey field
+        $record['primaryKey'] = $record['id'];
+
+        $this->query($q, $record);
     }
 }

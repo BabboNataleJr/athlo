@@ -28,12 +28,16 @@
     <div class="ghibli-exercise__remove">
         <form method="POST"
             action="/exercise/remove/<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">
-            <button type="submit">Delete it</button>
+            <button type="submit">Delete</button>
         </form>
     </div>
     <div class="ghibli-exercise__modify">
         <a href="/exercise/edit?id=<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">Edit</a>
     </div>
+</div>
+
+<div class="add_new_exercise">
+    <a href="/exercise/create"> Aggiungi nuovo esercizio </a> 
 </div>
 
 <?php }
