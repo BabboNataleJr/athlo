@@ -42,7 +42,7 @@ class DatabaseTable
         return $result->fetch();
     }
 
-    public function insert($record)
+    private function insert($record)
     {
         $q = 'INSERT INTO `'. $this->tableName .'` (';
 
@@ -79,7 +79,6 @@ class DatabaseTable
 
     public function update(array $record)
     {
-        // `name` = :name, `immagine` = :immagine, `descrizione` = :descrizione'
         $q = 'UPDATE `' . $this->tableName . '` SET ';
 
         foreach($record as $key => $value)
@@ -97,5 +96,14 @@ class DatabaseTable
         $record['primaryKey'] = $record['id'];
 
         $this->query($q, $record);
+    }
+
+    public function deleteById($id)
+    {
+        $sql = "DELETE FROM `" . $this->tableName . "` WHERE `" . $this->primaryKey . "` = :id";
+        
+        $to_return = $this->query($sql, ['id' => $id]);
+
+        return $to_return;
     }
 }

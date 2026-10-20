@@ -90,7 +90,7 @@ class ExerciseController
             if ($exercise)
             {
                 // update it
-                $this->exercise->update($exercise);
+                $this->exercise->update($exercise_data);
             }
             else
             {
@@ -125,12 +125,32 @@ class ExerciseController
             // todo: check that everything is filled and ready/safe to be saved
             if ($exercise)
             {
-                $this->exercise->create($exercise);
+                $this->exercise->save($exercise);
             }
 
             header('Location: /');
             exit;
         }
+    }
+
+    public function deleteExercise()
+    {
+        if(isset($_POST['exercise']))
+        {
+            $exercise_data = $_POST['exercise'];
+            $exercise = $this->exercise->findByValue($exercise_data['id']);
+
+            if ($exercise)
+            {
+                $this->exercise->deleteById($exercise['id']);
+            }
+        }
+
+        // retrieve the url that called the delete
+        $starting_url = $_SERVER['HTTP_REFERER'] ?? '/';
+        // redirect the customer to the calling url when availble
+        header('Location: ' . $starting_url);
+        exit;
     }
        
 }

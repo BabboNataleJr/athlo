@@ -58,7 +58,13 @@ class AthloRoutes
                     'controller' => $exerciseController,
                     'action' => 'saveCreate',
                 ],
-            ]
+            ],
+            'exercise/delete' => [
+                'POST' => [
+                    'controller' => $exerciseController,
+                    'action' => 'deleteExercise',
+                ]
+            ],
         ];
     }
 }

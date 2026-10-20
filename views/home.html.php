@@ -27,7 +27,8 @@
     </div>
     <div class="ghibli-exercise__remove">
         <form method="POST"
-            action="/exercise/remove/<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">
+            action="/exercise/delete">
+            <input type="hidden" name="exercise[id]" value="<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">
             <button type="submit">Delete</button>
         </form>
     </div>
