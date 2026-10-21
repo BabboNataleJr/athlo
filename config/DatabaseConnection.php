@@ -4,8 +4,14 @@ class DatabaseConnection
 {
     public static function getConnection()
     {
-        $host = '192.168.56.56:3306';
-        $username = 'homestead';
+        // from home
+        // $host = '192.168.56.56:3306';
+        // $username = 'homestead';
+
+        // from work
+        $host = '127.0.0.1';
+        $username = 'root';
+
         $password = 'secret';
         $dbname = 'pallavolo';
 

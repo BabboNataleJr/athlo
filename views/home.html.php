@@ -6,7 +6,7 @@
 <div class="no_exercises_message">
     <p>No exercises to show.</p>
     <div class="add_exercise">
-        <a href="/add">Add an exercise here</a>
+        <a href="/exercise/create">Add an exercise here</a>
     </div>
 </div>
 <?php } else {
