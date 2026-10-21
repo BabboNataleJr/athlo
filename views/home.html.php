@@ -37,9 +37,11 @@
     </div>
 </div>
 
+<?php }
+}
+
+?>
+
 <div class="add_new_exercise">
     <a href="/exercise/create"> Aggiungi nuovo esercizio </a> 
 </div>
-
-<?php }
-}
