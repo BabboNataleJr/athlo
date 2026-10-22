@@ -1,0 +1,36 @@
+.exercise__conteiner__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 350px));
+    gap: 24px;
+    justify-content: center;
+}
+
+.athlo-exercise__card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 350px;
+
+    background-color: #bbb8ae;
+    padding: 12px;
+    margin: 0;
+}
+
+.athlo-exercise__bottom {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.athlo-exercise__modify,
+.athlo-exercise__remove {
+    flex: 1 1 0;
+}
+
+.athlo-exercise__remove {
+    display: flex;
+    justify-content: flex-end;
+}

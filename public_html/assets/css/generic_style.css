@@ -1,0 +1,30 @@
+body{
+    background-color: #fcfbf7;
+}
+
+h1{
+    font-size: 200%;
+    font-weight: 900;
+    padding: 5px;
+    margin: 5px;
+}
+
+h2{
+    font-size: 150%;
+    font-weight: 700;
+    padding: 5px;
+    margin: 5px;
+}
+
+h3{
+    font-size: 130%;
+    font-weight: 600;
+    padding: 5px;
+    margin: 5px;
+}
+
+p{
+    font-size: 100%;
+    padding: 2px;
+    margin: 2px;
+}
