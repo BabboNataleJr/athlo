@@ -14,15 +14,35 @@
     width: 100%;
     max-width: 350px;
 
-    background-color: #bbb8ae;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 12px;
     margin: 0;
+
+    /* border: 3px solid #9b9891; */
+    border-radius: 5px;
+}
+
+.athlo-exercise__card h3{
+    margin: 0;
+    color: #2970CC;
+}
+
+.athlo-exercise__card p{
+    color: #292D33;
 }
 
 .athlo-exercise__bottom {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.athlo-exercise__bottom button, .athlo-exercise__bottom a {
+  padding: 5% 5%;
+  border-radius: 5px;
+  background-color: #F27005;
+  color: white;
 }
 
 .athlo-exercise__modify,
