@@ -4,6 +4,8 @@
 include_once __DIR__ . '/../core/AthloRoutes.php';
 include_once __DIR__ . '/../core/EntryPoint.php';
 
+include_once __DIR__ . '/../core/autoloader.php';;
+
 $route = ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
 
 $entryPoint = new EntryPoint($route, new AthloRoutes(), $_SERVER['REQUEST_METHOD']);

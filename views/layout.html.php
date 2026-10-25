@@ -9,6 +9,7 @@
      <link rel="stylesheet" href="/assets/css/generic_style.css"></link>
      <link rel="stylesheet" href="/assets/css/menu_style.css"></link>
      <link rel="stylesheet" href="/assets/css/exercise_card_style.css"></link>
+     <link rel="stylesheet" href="/assets/css/homepage_style.css">
 </head>
 <body>
     <header>

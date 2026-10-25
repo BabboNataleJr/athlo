@@ -127,6 +127,7 @@ button, [role="button"], label, summary, select {
    Text-decoration is intentionally left as underlined for accessibility. */
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 /* Removes bullets/numbers.

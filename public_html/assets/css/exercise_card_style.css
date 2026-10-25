@@ -1,7 +1,7 @@
 .exercise__conteiner__wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 350px));
-    gap: 24px;
+    gap: 50px;
     justify-content: center;
 }
 

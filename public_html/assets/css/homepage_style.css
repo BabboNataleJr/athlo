@@ -1,0 +1,15 @@
+.add_new_exercise{
+    padding: 5px;
+    position: relative;
+}
+
+.add_new_exercise a{
+    padding: 15px;
+    margin: 2px;
+    background-color: #F27005;
+    border-radius: 15px;
+    color: #FFFAED;
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}
