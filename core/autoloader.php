@@ -2,11 +2,14 @@
 
 function autoloader($classname)
 {
-    $filename = str_replace('\\', '/', $classname);
+    $filename = str_replace('\\', '/', $classname) . '.php';
 
-    $file = __DIR__ . $filename;
+    $file = $filename;
 
-    include($file);
+    echo "<pre>" . print_r($filename, true) . "</pre>";
+    echo "<pre>" . print_r($file, true) . "</pre>";
+
+    include_once $file;
 }
 
 spl_autoload_register('autoloader');

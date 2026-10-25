@@ -1,4 +1,5 @@
 <?php
+namespace Core;
 
 class AthloRoutes
 {
@@ -9,16 +10,16 @@ class AthloRoutes
 
     public function getRoutes()
     {
-        include_once __DIR__ . '/../config/DatabaseConnection.php';
-        include_once __DIR__ . '/../config/DatabaseTable.php';
-        include_once __DIR__ . '/../controllers/ExerciseController.php';
+        // include_once __DIR__ . '/../config/DatabaseConnection.php';
+        // include_once __DIR__ . '/../config/DatabaseTable.php';
+        // include_once __DIR__ . '/../controllers/ExerciseController.php';
 
-        $pdo = DatabaseConnection::getConnection();
+        $pdo = \Config\DatabaseConnection::getConnection();
         
-        $exerciseTable = new DatabaseTable($pdo, 'esercizio', 'id');
+        $exerciseTable = new \Config\DatabaseTable($pdo, 'esercizio', 'id');
         // $authorTable = new DatabaseTable($pdo, 'author', 'id');
 
-        $exerciseController = new ExerciseController($exerciseTable);
+        $exerciseController = new \Controllers\ExerciseController($exerciseTable);
 
         return [
             '' => [
