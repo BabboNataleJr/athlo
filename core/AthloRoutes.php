@@ -10,15 +10,14 @@ class AthloRoutes
 
     public function getRoutes()
     {
-        // include_once __DIR__ . '/../config/DatabaseConnection.php';
-        // include_once __DIR__ . '/../config/DatabaseTable.php';
-        // include_once __DIR__ . '/../controllers/ExerciseController.php';
-
+        // get the Database Connection
         $pdo = \Config\DatabaseConnection::getConnection();
         
+        // retrieve the database tables
         $exerciseTable = new \Config\DatabaseTable($pdo, 'esercizio', 'id');
         // $authorTable = new DatabaseTable($pdo, 'author', 'id');
 
+        // load the controller
         $exerciseController = new \Controllers\ExerciseController($exerciseTable);
 
         return [

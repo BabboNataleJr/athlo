@@ -1,10 +1,7 @@
 <?php
 
-// AthloRoutes si include come dipendenza di EntryPoint
-// include_once __DIR__ . '/../core/AthloRoutes.php';
-// include_once __DIR__ . '/../core/EntryPoint.php';
-
-include_once __DIR__ . '/../Core/autoloader.php';;
+// the autoloader now includes all the classes
+include_once __DIR__ . '/../Core/autoloader.php';
 
 $route = ltrim(strtok($_SERVER['REQUEST_URI'], '?'), '/');
 

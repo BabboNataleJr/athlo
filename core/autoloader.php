@@ -4,12 +4,12 @@ function autoloader($classname)
 {
     $filename = str_replace('\\', '/', $classname) . '.php';
 
-    $file = $filename;
+    $file = dirname(__DIR__) . DIRECTORY_SEPARATOR . $filename;
 
-    echo "<pre>" . print_r($filename, true) . "</pre>";
-    echo "<pre>" . print_r($file, true) . "</pre>";
-
-    include_once $file;
+    if (file_exists($file)) 
+    {
+        include_once $file;
+    }
 }
 
 spl_autoload_register('autoloader');
