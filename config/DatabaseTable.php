@@ -93,7 +93,7 @@ class DatabaseTable
         {
             $this->insert($record);
         }
-        catch(Exception $e)
+        catch(\Exception $e)
         {
             // silently ignore
         }
