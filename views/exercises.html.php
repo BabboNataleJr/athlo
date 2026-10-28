@@ -37,7 +37,7 @@
                 <div class="athlo-exercise__modify">
                     <a href="/exercise/edit?id=<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">Edit</a>
                 </div>
-                 <div class="athlo-exercise__remove">
+                <div class="athlo-exercise__remove">
                     <form method="POST"
                         action="/exercise/delete">
                         <input type="hidden" name="exercise[id]" value="<?php echo htmlspecialchars($exercise['id'], ENT_QUOTES, 'UTF-8'); ?>">

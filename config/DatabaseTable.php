@@ -43,6 +43,27 @@ class DatabaseTable
         return $result->fetch();
     }
 
+    public function findByKey($values)
+    {
+        if (!empty($values) && !is_array($values))
+        {
+            // it has only a string value
+            return $this->findByValue($values);
+        }
+
+        $key = array_key_first($values);
+        $value = $values[$key];
+
+        $q = 'SELECT * FROM `'. $this->tableName .'` WHERE ' . $key . ' = :value;';
+
+        $params = [
+            'value' => $value,
+        ];
+
+        $result = $this->query($q, $params);
+        return $result->fetch();
+    }
+
     private function insert($record)
     {
         $q = 'INSERT INTO `'. $this->tableName .'` (';

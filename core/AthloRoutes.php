@@ -15,55 +15,83 @@ class AthloRoutes
         
         // retrieve the database tables
         $exerciseTable = new \Config\DatabaseTable($pdo, 'esercizio', 'id');
-        // $authorTable = new DatabaseTable($pdo, 'author', 'id');
+        $authorTable = new \Config\DatabaseTable($pdo, 'utente', 'id');
 
-        // load the controller
+        // load the controllers
         $exerciseController = new \Controllers\ExerciseController($exerciseTable);
+        $registerController = new \Controllers\RegisterController($authorTable);
 
         return [
             '' => [
                 'GET' => [
                     'controller' => $exerciseController,
-                    'action' => 'home',
+                    'action'     => 'home',
                 ],
             ],
             'about' => [
                 'GET' => [
                     'controller' => $exerciseController,
-                    'action' => 'about',
+                    'action'     => 'about',
                 ],
             ],
             'exercises/list' => [
                 'GET' => [
                     'controller' => $exerciseController,
-                    'action' => 'listAllExercises',
+                    'action'     => 'listAllExercises',
                 ],
             ],
             'exercise/edit' => [
                 'GET' => [
                     'controller' => $exerciseController,
-                    'action' => 'showEdit',
+                    'action'     => 'showEdit',
                 ],
                 'POST' => [
                     'controller' => $exerciseController,
-                    'action' => 'saveEdit'
+                    'action'     => 'saveEdit'
                 ],
             ],
             'exercise/create' => [
                 'GET'=> [
                     'controller' => $exerciseController,
-                    'action' => 'showCreate',
+                    'action'     => 'showCreate',
                 ],
                 'POST'=> [
                     'controller' => $exerciseController,
-                    'action' => 'saveCreate',
+                    'action'     => 'saveCreate',
                 ],
             ],
             'exercise/delete' => [
                 'POST' => [
                     'controller' => $exerciseController,
-                    'action' => 'deleteExercise',
+                    'action'     => 'deleteExercise',
                 ]
+            ],
+            // REGISTERCONTROLLER
+            'user/login' => [
+                'GET' => [
+                    'controller' => $registerController,
+                    'action'     => 'showLogin',
+                ],
+                'POST' => [
+                    'controller' => $registerController,
+                    'action'     => 'checkLogin',
+                ],
+            ],
+            'user/create' => [
+                'GET' => [
+                    'controller' => $registerController,
+                    'action'     => 'showRegisterForm',
+                ],
+                'POST' => [
+                    'controller' => $registerController,
+                    'action'     => 'saveUser',
+                ],
+            ],
+            'user/list' => [
+                'GET'=> [
+                    'controller' => $registerController,
+                    'action'     => 'listAllUsers',
+                ],
             ],
         ];
     }
