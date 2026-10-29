@@ -31,28 +31,10 @@ class DatabaseTable
         return $res->fetchAll();
     }
 
-    public function findByValue($value)
+    public function findByValue($value, $key = null)
     {
-        $q = 'SELECT * FROM `'. $this->tableName .'` WHERE ' . $this->primaryKey . ' = :value;';
-
-        $params = [
-            'value' => $value,
-        ];
-
-        $result = $this->query($q, $params);
-        return $result->fetch();
-    }
-
-    public function findByKey($values)
-    {
-        if (!empty($values) && !is_array($values))
-        {
-            // it has only a string value
-            return $this->findByValue($values);
-        }
-
-        $key = array_key_first($values);
-        $value = $values[$key];
+        // assegna $this->primaryKey solo e soltanto se $key è null
+        $key ??= $this->primaryKey;
 
         $q = 'SELECT * FROM `'. $this->tableName .'` WHERE ' . $key . ' = :value;';
 

@@ -6,6 +6,7 @@
     <title><?php echo $title; ?></title>
     <!-- <link rel="stylesheet" href="/assets/css/ghibli_style.css"> -->
      <link rel="stylesheet" href="/assets/css/reset.css"></link>
+     <link rel="stylesheet" href="/assets/css/typografia.css"></link>
      <link rel="stylesheet" href="/assets/css/generic_style.css"></link>
      <link rel="stylesheet" href="/assets/css/menu_style.css"></link>
      <link rel="stylesheet" href="/assets/css/exercise_card_style.css"></link>
@@ -23,6 +24,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/exercises/list">Exercises</a></li>
+                        <li><a href="/user/login">Login</a></li>
                     </ul>
                 </nav>
             </div>

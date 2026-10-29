@@ -1,0 +1,12 @@
+h4{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+button{
+    padding: .2rem .4rem;
+    margin: 2px;
+    background-color: #F27005;
+    border-radius: 15px;
+    color: #FFFAED;
+}
