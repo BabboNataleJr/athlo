@@ -21,6 +21,11 @@ class RegisterController
             $variables['error_message'] = $_GET['error_message'];
         }
 
+        if (isset($_GET['success_message']) && !empty($_GET['success_message']))
+        {
+            $variables['success_message'] = $_GET['success_message'];
+        }
+
         $page = [
             'title'     => "Effettua il login",
             'template'  => "login.html",
@@ -32,7 +37,9 @@ class RegisterController
 
     public function showRegisterForm()
     {
-        $variables = [];
+        $variables = [
+            'message' => 'Registra qui il tuo account',
+        ];
 
         if (isset($_GET['error_message']) && !empty($_GET['error_message']))
         {
@@ -42,7 +49,7 @@ class RegisterController
         $page = [
             'title'    => 'Registrati!',
             'template' => 'register.html',
-            'varibles' => $variables,
+            'variables' => $variables,
         ];
 
         return $page;
@@ -54,12 +61,13 @@ class RegisterController
         {
             $user_data = $_POST['user'];
 
-            $user = $this->user->findByKey($user_data['email'], 'email');
+            $user = $this->user->findByValue($user_data['email'], 'email');
 
             if (!$user)
             {
                 // TODO: sanitize and verify every user field
-                $this->user->save($user);
+                $user_data['password'] = md5($user_data['password']);
+                $this->user->save($user_data);
             }
             else
             {
@@ -68,6 +76,16 @@ class RegisterController
                 exit;
             }
         }
+        else
+        {
+            $error_message = 'Please, fill in the required fileds.';
+            header('Location: /user/create?error_message=' . $error_message);
+            exit;
+        }
+
+        $success_message = 'La registrazione è avvenuta con successo. Effettuare il login!';
+        header('Location: /user/login?success_message=' . $success_message);
+        exit;
     }
 
     public function checkLogin()

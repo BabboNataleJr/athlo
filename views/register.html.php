@@ -20,7 +20,7 @@
                 <input type="password" name="user[password]" id="athlo_register_password">
             </div>
             <div class="athlo-register__submit__button__wrap">
-                <button type="submit" id="athlo-submit_button" class="athlo-submit__button"> Register </button>
+                <button type="submit" id="athlo-submit_button" class="athlo-submit__button">Register</button>
             </div>
         </form>
     </div>
